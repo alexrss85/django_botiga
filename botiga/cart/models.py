@@ -6,4 +6,8 @@ class User(models.Model):
 
 class Cart(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(db_comment="Date time creation")
+    created_at = models.DateTimeField(auto_now_add=True)
+class CartItem(models.Model):
+    cart_id = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product_id = models.ForeignKey('catalog.Product', on_delete=models.CASCADE)
+    quantity = models.IntegerField()
