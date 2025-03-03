@@ -12,15 +12,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name='User',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nom', models.CharField(max_length=50)),
-                ('descripcio', models.CharField(max_length=50)),
-                ('preu', models.IntegerField()),
-                ('stock', models.IntegerField()),
-                ('categoria', models.CharField(max_length=30)),
-                ('marca', models.CharField(max_length=20)),
+                ('email', models.EmailField(max_length=30)),
+                ('constrasenya', models.CharField(default=1234, max_length=20)),
             ],
         ),
     ]

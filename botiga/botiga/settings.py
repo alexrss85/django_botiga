@@ -38,9 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog.apps.CatalogConfig',
-    'payment.apps.PaymentConfig',   
+    'payment.apps.PaymentConfig',
+    'orders.apps.OrdersConfig',    
+    'cart.apps.CartConfig', 
     'rest_framework',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
