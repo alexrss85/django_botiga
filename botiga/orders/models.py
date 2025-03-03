@@ -8,3 +8,8 @@ class Order(models.Model):
     total_price = models.IntegerField()
     status = models.CharField(max_length=20, choices=status_choice, default="pending")
     created_at = models.DateTimeField(auto_now_add=True)
+
+class OrderItem(models.Model):
+    order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
+    product_id = models.ForeignKey('catalog.Product', on_delete=models.CASCADE)
+    quantity = models.IntegerField()
